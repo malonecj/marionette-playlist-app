@@ -1,0 +1,209 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TuneFish</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand logo" href="#">TuneFish </a>
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <div class="col-sm-6 col-md-6">
+                            <form class="navbar-form" id="searchBoxRegion" role="search" method="get" name="search-form">
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 col-sm-3 sidebar">
+                    <div class="list-group">
+                        <li class="list-group-item active"><a href="#"> <i class="fa fa-headphones"></i> Listen Now</a></li>
+
+                    </div>
+                    <hr>
+                    <div class="list-group">
+                        <span href="#" class="list-group-item active">
+                            PlayLists
+                            <span class="pull-right" id="slide-submenu">
+                                <i class="fa fa-plus-square"></i>
+                            </span>
+                        </span>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-thumbs-o-up"></i> Favourites
+                            <span class="badge">0</span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-history"></i> Song Queue
+                            <span class="badge">0</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-md-offset-2 main">
+                    <div id="mainRegion">
+
+                    </div>
+
+                    <div class="footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <!-- build:js scripts/vendor.js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/handlebars/handlebars.js"></script>
+        <script src="bower_components/marionette/lib/backbone.marionette.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/sass-bootstrap/js/affix.js"></script>
+        <script src="bower_components/sass-bootstrap/js/alert.js"></script>
+        <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
+        <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
+        <script src="bower_components/sass-bootstrap/js/modal.js"></script>
+        <script src="bower_components/sass-bootstrap/js/transition.js"></script>
+        <script src="bower_components/sass-bootstrap/js/button.js"></script>
+        <script src="bower_components/sass-bootstrap/js/popover.js"></script>
+        <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
+        <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
+        <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
+        <script src="bower_components/sass-bootstrap/js/tab.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <script src="scripts/Shared/mixins.js"></script>
+        <script src="scripts/Entities/album.js"></script>
+        <script src="scripts/Entities/artist.js"></script>
+        <script src="scripts/Entities/imageEmbed.js"></script>
+        <script src="scripts/Entities/artistCollection.js"></script>
+         <script src="scripts/Entities/trackCollection.js"></script>
+        <script src="scripts/Search/views/search_box_view.js"></script>
+        <script src="scripts/Search/views/search_list_view.js"></script>
+        <script src="scripts/Search/views/search_layout.js"></script>
+        <script src="scripts/Search/views/song_list.js"></script>
+        <script src="scripts/Search/search_app.js"></script>
+        <script src="scripts/Search/search_controller.js"></script>
+        <script src="scripts/Shared/views/loader_view.js"></script>
+
+        <script src="scripts/templates.js"></script>
+
+        <script id="search-box-tmpl" type="text/x-handlebars-template">
+            <div class="input-group">
+                <input type="search" class="form-control" placeholder="Search for songs, artists or albums">
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btn-success">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </div>
+            </div>
+        </script>
+
+        <script id="search-artist-item-tmpl" type="text/x-handlebars-template">
+                <a href="#" class="thumbnail">
+                    <img data-src="" alt="..." class="img-circle js-artist-img">
+                </a>
+                <div class="caption">
+                    <h5>{{name}}</h5>
+                </div>
+        </script>
+
+        <script id="search-artist-list-tmpl" type="text/x-handlebars-template">
+            <h3><span class="label label-default">Artists</span></h3>
+            <div class='row'></div>
+        </script>
+
+        <script id="track-item-tmpl" type="text/x-handlebars-template">
+                <td>{{track-number}}</td><td>{{name}}</td><td>{{songLength length}}</td><td><i class="fa fa-star-o"></i></td>
+        </script>
+
+        <script id="track-list-tmpl" type="text/x-handlebars-template">
+        <div class="row">
+
+              <a class="col-xs-4 col-md-1" href="#">
+                <img class="thumbnail" src="..." alt="...">
+              </a>
+              <h4 class="media-heading">{{name}}</h4>
+
+            <table class="table table-striped">
+            <thead><tr><th></th><th>Name</th><th><i class="fa fa-clock-o"></i></th><th><th></tr></thead>
+                <tbody></tbody>
+            </table>
+            </div>
+            <hr>
+        </script>
+
+
+        <script id="track-container-tmpl" type="text/x-handlebars-template">
+                <h3><span class="label label-default">Tracks</span></h3>
+        </script>
+
+        <script id="search-layout-tmpl" type="text/x-handlebars-template">
+            <div id="artistListRegion"></div>
+            <div id="trackListRegion"></div>
+        </script>
+
+         <script id="loader-tmpl" type="text/x-handlebars-template">
+         <div class="row">
+         <div class="col-md-4"></div>
+            <div class="col-md-4"><i class="fa fa-cog fa-5x fa-spin"></i></div>
+             <div class="col-md-4"></div>
+         </div>
+        </script>
+
+        <!-- endbuild -->
+
+        <script>
+            Backbone.Marionette.TemplateCache.prototype.compileTemplate = function(rawTemplate) {
+                return Handlebars.compile(rawTemplate);
+            };
+            PlaylistApp.start();
+        </script>
+</body>
+</html>
